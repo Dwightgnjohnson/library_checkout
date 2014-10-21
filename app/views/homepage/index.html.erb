@@ -1,1 +1,20 @@
-<h1>Homepage</h1>
+<h1>Homepage</h1><br>
+
+<h2>ALL PATRONS</h2>
+<% @patrons.all.each do |patron| %>
+    <%= patron.name %> |
+<% end %>
+
+<hr>
+
+<h2>ALL BOOKS</h2>
+<% @books.all.each do |book| %>
+    <p><%= book.title %> | <%= book.year %> | <%= book.available %></p>
+<% end %>
+
+<hr>
+
+<h2>ALL CHECKOUTS</h2>
+<% @books.all.each do |book| %>
+    <p><%= book.title %> | <%= book.year %> | <%= book.available %></p>
+<% end %>
