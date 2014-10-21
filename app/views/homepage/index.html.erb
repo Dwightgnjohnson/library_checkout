@@ -7,22 +7,14 @@
 
 <hr>
 
-<h2>ALL AUTHORS</h2>
-<% @authors.all.each do |author| %>
-    <%= author.name %> |
-    <%= author.id %>
-<% end %>
-
-<hr>
-
 <h2>ALL BOOKS</h2>
 <% @books.all.each do |book| %>
-    <p><%= book.title %> | <%= book.year %> | <%= book.available %></p>
+    <p><%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.available %></p>
 <% end %>
 
 <hr>
 
 <h2>ALL CHECKOUTS</h2>
-<% @books.all.each do |book| %>
-    <p><%= book.title %> | <%= book.year %> | <%= book.available %></p>
+<% @checkouts.all.each do |checkout| %>
+    <p><%= checkout.checked_outs %> | <%= checkout.checked_ins %> | <%= checkout.created_at %></p>
 <% end %>

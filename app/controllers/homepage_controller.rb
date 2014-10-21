@@ -3,6 +3,5 @@ class HomepageController < ApplicationController
     @patrons = Patron.all
     @books = Book.all
     @checkouts = Checkout.all
-    @authors = Author.all
   end
 end

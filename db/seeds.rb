@@ -1,11 +1,7 @@
-Patron.destroy_all
-Book.destroy_all
-Author.destroy_all
-
 
 Patron.create name: "Prince"
 Patron.create name: "Grimes"
 
-Author.create name: "Tupac Shakur"
+Book.create title: "The Rose That Grew From Concrete", author: "Tupac", year: 1999, available: true
 
-Book.create title: "The Rose That Grew From Concrete", year: 1999, available: true
+Checkout.create checked_outs: 292, checked_ins: 23903
