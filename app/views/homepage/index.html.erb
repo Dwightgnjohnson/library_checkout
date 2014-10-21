@@ -7,6 +7,14 @@
 
 <hr>
 
+<h2>ALL AUTHORS</h2>
+<% @authors.all.each do |author| %>
+    <%= author.name %> |
+    <%= author.id %>
+<% end %>
+
+<hr>
+
 <h2>ALL BOOKS</h2>
 <% @books.all.each do |book| %>
     <p><%= book.title %> | <%= book.year %> | <%= book.available %></p>
