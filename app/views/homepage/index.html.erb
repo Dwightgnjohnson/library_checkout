@@ -1,20 +1,32 @@
-<h1>Homepage</h1><br>
+<h1>LIBRARY</h1><br>
 
-<h2>ALL PATRONS</h2>
-<% @patrons.all.each do |patron| %>
-    <%= patron.name %> |
-<% end %>
-
-<hr>
-
-<h2>ALL BOOKS</h2>
+<h2>ALL BOOKS AVAILABLE</h2>
+<ul>
 <% @books.all.each do |book| %>
-    <p><%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.available %></p>
+
+    <% if book.available == true %>
+    <li>
+        <%= link_to "CHECK-OUT", '#' %>
+        <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
+    </li>
+  <% end %>
 <% end %>
+</ul>
 
-<hr>
+<h2>ALL BOOKS CHECK-OUT</h2>
+<ul>
+<% @books.all.each do |book| %>
 
-<h2>ALL CHECKOUTS</h2>
-<% @checkouts.all.each do |checkout| %>
-    <p><%= checkout.checked_outs %> | <%= checkout.checked_ins %> | <%= checkout.created_at %></p>
+    <% if book.available == false %>
+    <li><%= link_to "CHECK-IN", '#' %>
+        <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+
+
+<% @books.all.each do |book| %>
+
 <% end %>
