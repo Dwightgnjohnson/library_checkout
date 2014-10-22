@@ -1,32 +1,29 @@
 <h1>LIBRARY</h1><br>
 
-<h2>ALL BOOKS AVAILABLE</h2>
+Number of books in inventory: <%= @books.count %>
+
+<h2>ALL BOOKS CHECKED-IN</h2>
 <ul>
 <% @books.all.each do |book| %>
 
     <% if book.available == true %>
     <li>
-        <%= link_to "CHECK-OUT", '#' %>
-        <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
+      <%= link_to "CHECK-OUT", '#' %>
+        <%= link_to book.title, edit_book_path(book) %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
     </li>
   <% end %>
 <% end %>
 </ul>
 
-<h2>ALL BOOKS CHECK-OUT</h2>
+<h2>ALL BOOKS CHECKED-OUT</h2>
 <ul>
 <% @books.all.each do |book| %>
 
     <% if book.available == false %>
-    <li><%= link_to "CHECK-IN", '#' %>
+    <li>
+        <%= link_to "CHECK-IN", '#' %>
         <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
     </li>
   <% end %>
 <% end %>
 </ul>
-
-
-
-<% @books.all.each do |book| %>
-
-<% end %>

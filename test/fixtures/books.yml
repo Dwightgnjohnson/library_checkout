@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  author_id: 1
+  author: MyString
   year: 1
   available: false
 
 two:
   title: MyString
-  author_id: 1
+  author: MyString
   year: 1
   available: false

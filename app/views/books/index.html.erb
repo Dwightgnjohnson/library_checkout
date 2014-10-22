@@ -1,0 +1,40 @@
+<h1>LIBRARY</h1><br>
+
+<% link_to 'New Book', new_book_path %>
+Number of books in inventory: <%= @books.count %>
+
+<h2>ALL BOOKS CHECKED-IN</h2>
+<ul>
+<% @books.all.each do |book| %>
+
+    <% if book.available == true %>
+    <li>
+      <%= link_to "CHECK-OUT", edit_book_path(book) %>
+      <% link_to 'Show', book %>
+      <% link_to 'Edit', edit_book_path(book) %>
+      <% link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<h2>ALL BOOKS CHECKED-OUT</h2>
+<ul>
+<% @books.all.each do |book| %>
+
+    <% if book.available == false %>
+    <li>
+        <%= link_to 'CHECK-IN', edit_book_path(book) %>
+        <% link_to 'Show', book %>
+        <% link_to 'Edit', edit_book_path(book) %>
+        <% link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= book.title %> | <%= book.author %> | <%= book.year %> | <%= book.id %> | <%= book.available %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<% @checkouts.each do |checkout| %>
+    <h4><%= checkout.inspect %></h4>
+<% end %>

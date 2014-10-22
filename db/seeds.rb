@@ -2,14 +2,15 @@ Patron.destroy_all
 Book.destroy_all
 Checkout.destroy_all
 
-Patron.create name: "Prince"
-Patron.create name: "Grimes"
-Patron.create name: "BANKS"
-Patron.create name: "Drake"
-Patron.create name: "Madeon"
-Patron.create name: "CHVRCHES"
+book1 = Book.create title: "The Rose That Grew From Concrete", author: "Tupac", year: 1999, available: true
 
-Book.create title: "The Rose That Grew From Concrete", author: "Tupac", year: 1999, available: true
-Book.create title: "Kanye West Glow in the Dark", author: "Kanye West", year: 2009, available: false
-Book.create title: "Decoded", author: "Jay-Z", year: 2010, available: true
-Book.create title: "Confessions of a Video Vixen", author: "Karrine Steffans", year: 2009, available: true
+book2 = Book.create title: "Hard Knocks", author: "Jay-Z", year: 2008, available: false
+
+patron1 = Patron.create name: "Bob"
+patron2 = Patron.create name: "Jill"
+patron3 = Patron.create name: "Bob"
+patron4 = Patron.create name: "Jill"
+
+
+checkout1 = Checkout.create book:book1, patron:patron1
+checkout2 = Checkout.create book:book2, patron:patron3
